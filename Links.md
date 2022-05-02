@@ -1,4 +1,4 @@
-Link Miro (User Storie Mepping):
+Link Miro (User Storie Mapping):
 https://miro.com/app/board/uXjVO5bjXQA=/
 
 
