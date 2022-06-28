@@ -46,6 +46,22 @@ public class Medico {
         return apellido;
     }
 
+    public LocalTime getHorarioInicio() {
+        return inicio;
+    }
+
+    public LocalTime getHorarioFin() {
+        return fin;
+    }
+
+    public ArrayList<Turno> getTurnosOcupados() {
+        return new ArrayList<>(turnosOcupados);
+    }
+
+    public ArrayList<String> getDiasLaborales() {
+        return new ArrayList<>(dias);
+    }
+
     public boolean equals(Medico m){
         return (this.nombre.equals(m.getNombre()) && this.apellido.equals(m.getApellido()));
     }
@@ -56,6 +72,20 @@ public class Medico {
         for (String os: obrasSociales)
             salida += os + ",";
         salida += "| Especialidad: " + especialidad;
+        salida += "\n" + "| Días laborales: ";
+        for (String s:dias)
+            salida += s + ",";
+        salida += "| Horario: " + inicio.toString() + "-" + fin.toString() + "\n";
+        return salida;
+    }
+
+
+    public ArrayList<Turno> getTurnosDisp(FiltroTurno filtro){
+        ArrayList<Turno> salida = new ArrayList<>();
+        
+
+
+
         return salida;
     }
 

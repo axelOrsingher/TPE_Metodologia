@@ -1,22 +1,74 @@
+import java.time.LocalTime;
+import java.util.ArrayList;
+
 public class Inicializador {//se utiliza para que el usuario no vea las funcionalidades del centro medico
-    private CentroMedico centroMedico;
+    private CentroMedico cm;
 
 
     public Inicializador(CentroMedico cm){
-        centroMedico = cm;
+        this.cm = cm;
     }
 
     public void cargarNuevoPaciente(Paciente p){
-        centroMedico.addPaciente(p);
+        cm.addPaciente(p);
     }
 
     public void cargarNuevoMedico(Medico m){
-        centroMedico.addMedico(m);
+        cm.addMedico(m);
     }
 
     public void cargarNuevaSecretaria(Secretaria s){
-        centroMedico.addSecretaria(s);
+        cm.addSecretaria(s);
     }
 
+
+    public void crearCuentasEjemplo(){
+        //MEDICOS DE PRUEBA
+        Medico m1 = new Medico("Santino", "Lucarini","Oftalmologo");
+        cm.addMedico(m1);
+        Medico m2 = new Medico("Lara","Venere","Pediatra");
+        cm.addMedico(m2);
+        Medico m3 = new Medico("Axel","Orsingher","Traumatologo");
+        cm.addMedico(m3);
+
+        //DIAS DE TRABAJO,HORARIOS y OBRAS SOCIALES DE CADA MEDICO
+        ArrayList<String> diasDeTrabajo= new ArrayList<>();
+        diasDeTrabajo.add("Lunes");
+        diasDeTrabajo.add("Miercoles");
+        diasDeTrabajo.add("Viernes");
+        LocalTime inicio = LocalTime.of(8,0);
+        LocalTime fin = LocalTime.of(16,0);
+        ArrayList<String> obrasSociales = new ArrayList<>();
+        obrasSociales.add("OS1");
+
+        //Medico 1
+        m1.setDiasYHorarios(diasDeTrabajo, inicio, fin);
+        m1.setObrasSociales(obrasSociales);
+        //Medico 2
+        diasDeTrabajo.add("Martes");
+        obrasSociales.add("OS2");
+        inicio = LocalTime.of(10,0);
+        fin = LocalTime.of(18,0);
+        m2.setDiasYHorarios(diasDeTrabajo, inicio,fin);
+        m2.setObrasSociales(obrasSociales);
+        //Medico 3
+        diasDeTrabajo.add("Jueves");
+        obrasSociales.add("OS3");
+        inicio = LocalTime.of(8,0);
+        fin = LocalTime.of(18,0);
+        m3.setDiasYHorarios(diasDeTrabajo, inicio,fin);
+        m3.setObrasSociales(obrasSociales);
+        //PACIENTES DE PRUEBA
+        Paciente p1 = new Paciente(12344,"Mateo","Rodon","Calle 123",56789,"mateorodon@gmail.com","OS1",01234);
+        Paciente p2 = new Paciente(56789,"Agustina","Alabart","Calle 456",01234,"agusalabart@gmail.com","OS2",56789);
+        cm.addPaciente(p1);
+        cm.addPaciente(p2);
+        //SECRETARIA DE LOS 3 MEDICOS CREADOS
+        Secretaria s = new Secretaria();
+        s.addMedico(m1);
+        s.addMedico(m2);
+        s.addMedico(m3);
+        cm.addSecretaria(s);
+    }
     
 }

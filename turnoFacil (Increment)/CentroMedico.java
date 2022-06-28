@@ -14,6 +14,10 @@ public class CentroMedico { //representa la carga de datos de los usuarios, medi
         pacientes = new ArrayList<>();
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+    
     public void addMedico(Medico m){
         medicos.add(m);
     }

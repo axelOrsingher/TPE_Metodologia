@@ -32,7 +32,6 @@ public class Menu {
         //inic.close();
     }
 
-
     public void sacarTurno(Paciente actual){
         Scanner entrada = new Scanner(System.in);
         System.out.println("¿Desea filtrar por Obra Social?");
@@ -51,7 +50,7 @@ public class Menu {
 			String esp = entrada.nextLine();
             FiltroObraSocial f1 = new FiltroObraSocial(obraSocial);
             FiltroEspecialidad f2 = new FiltroEspecialidad(esp);
-            FiltroAND f = new FiltroAND(f1, f2);
+            FiltroANDMedico f = new FiltroANDMedico(f1, f2);
             opciones = cm.getMedicos(f);
         }
         if (respuesta1 == 2 && respuesta2 == 1){
@@ -83,5 +82,66 @@ public class Menu {
         //convertimos los string en fechas
         LocalDate inicio = LocalDate.parse(date1, formatter);
         LocalDate fin = LocalDate.parse(date2, formatter);
+        System.out.println("¿Busca turno por la mañana o por la tarde?: ");
+        System.out.println("1.Mañana");
+        System.out.println("2.Tarde");
+        System.out.println("3.Ver todas las opciones");
+        int respuesta3 = Integer.parseInt(entrada.nextLine());
+        ArrayList<Turno> opciones2 = new ArrayList<>();
+        FiltroRangoDias fDias = new FiltroRangoDias(inicio, fin);
+        if (respuesta3 == 1){
+            FiltroHorario fHorario = new FiltroHorario("M");
+            FiltroANDTurno f = new FiltroANDTurno(fDias,fHorario);
+            opciones2 = medicoElegido.getTurnosDisp(f);
+        }
+        if (respuesta3 == 2){
+            FiltroHorario fHorario = new FiltroHorario("T");
+            FiltroANDTurno f = new FiltroANDTurno(fDias,fHorario);
+            opciones2 = medicoElegido.getTurnosDisp(f);
+        }
+        if (respuesta3 == 3){
+            opciones2 = medicoElegido.getTurnosDisp(fDias);
+        }
+
     }
+
+
+    public Paciente iniciarSesionPaciente(){
+        Scanner entrada = new Scanner (System.in);
+        //INICIO DE SESION, EN CASO DE NO ESTAR REGISTRADO SE CREA UNA CUENTA
+		System.out.println("Bienvenido a TurnoFacil");
+        System.out.println("Ingrese su DNI: ");
+        long dni = Long.parseLong(entrada.nextLine());
+        iniciarSesion(dni);
+        Paciente pacienteActual = cm.getPaciente(dni);
+        return pacienteActual;
+    }
+
+    public void mostrarOpciones(Paciente actual){
+        int opcion = 0;
+        Scanner entrada = new Scanner (System.in);
+        while (opcion!=4){
+            System.out.println("1. Sacar turno");
+            System.out.println("2. Ver próximos turnos");
+            System.out.println("3. Cancelar turno");
+            System.out.println("4. Salir");
+            opcion = Integer.parseInt(entrada.nextLine());
+
+            if (opcion == 1){
+                sacarTurno(actual);
+
+            }
+            if (opcion == 2){
+                //verTurnos(actual); //IMPLEMENTAR
+            }
+            if (opcion == 3){
+                //cancelarTurno(actual); //IMPLEMENTAR
+            }
+
+        }
+    }
+
+
+
+
 }

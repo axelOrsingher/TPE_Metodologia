@@ -22,10 +22,15 @@ public class Turno {
 
     public String getTurno(){
         if (fechaTurno.getHour() > 12)
-            return "mañana";
+            return "M";
         else 
-            return "tarde";
+            return "T";
     }
+
+
+    /*public boolean equals(Turno t){
+        return this.getFecha().equals(t.getFecha()) && (this.getMedico().equals(t.getMedico()));
+    }*/
 
     public Medico getMedico(){
         return medico;
