@@ -50,16 +50,21 @@ Se corroboró que todas las personas que fueron invitadas asistieron a la reunio
 
 - Entrega a tiempo
 - Gran espiritu de equipo
+- Buen entendimiento y realizacion de los diagramas
 
 1. # **What could be improved?**
 
 - Reducir la discrepáncia entre los miembros del equipo a la hora de la toma de decisiones
 - Mejor comunicación
 - Dificultad a la hora de pautar reuniones
+- Problemas a la hora de realizar el Increment
+- Inconvenientes con el Jira. Organizacion de stories y el comienzo de la segunda sprint.
 
 1. # **What will we commit to doing in the next Sprint? (actionable commitments)**
 
 Para el siguiente Sprint nos comprometemos a solucionar todo aquello que puede ser mejorado. Generalmente la toma decisiones o discuciones nos tomo una cantidad de tiempo que creemos que puede ser reducida.
+  
+Obviamente tambien apuntamos a centrarnos en lograr un buen Increment y a su vez mejorar el manejo del Jira, que gracias a la sprint anterior, pudimos reconocer nuestros errores y finalmente, arreglarlos.
 
 
 
