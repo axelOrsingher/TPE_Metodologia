@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class Turno {
     private LocalDateTime fechaTurno;
@@ -20,17 +21,24 @@ public class Turno {
         return LocalDate.of(anio,mes,dia);
     }
 
+    public LocalTime getHorario(){
+        int hora = fechaTurno.getHour();
+        int minutos = fechaTurno.getMinute();
+
+        return LocalTime.of(hora, minutos);
+    }
+
     public String getTurno(){
-        if (fechaTurno.getHour() > 12)
+        if (fechaTurno.getHour() < 12)
             return "M";
         else 
             return "T";
     }
 
 
-    /*public boolean equals(Turno t){
-        return this.getFecha().equals(t.getFecha()) && (this.getMedico().equals(t.getMedico()));
-    }*/
+    public boolean equals(Turno t){
+        return this.getFecha().equals(t.getFecha())&& (this.getHorario().equals(t.getHorario())) && (this.getMedico().equals(t.getMedico()));
+    }
 
     public Medico getMedico(){
         return medico;
@@ -38,6 +46,11 @@ public class Turno {
 
     public Paciente getPaciente(){
         return paciente;
+    }
+
+    public String toString(){
+        return "Fecha: " + fechaTurno.toString();
+
     }
 
 }

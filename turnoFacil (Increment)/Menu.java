@@ -71,7 +71,7 @@ public class Menu {
         for(int i =0;i<opciones.size();i++){
             System.out.println(i + ". " + opciones.get(i).toString());
         }
-        System.out.println("Seleccione un médico: ");
+        System.out.println("Seleccione un médico(ingrese el numero): ");
         Medico medicoElegido = actual.seleccionarMedico(opciones);
         System.out.println("Ingrese el rango de fechas deseado(d/MM/yyyy): ");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
@@ -90,19 +90,21 @@ public class Menu {
         ArrayList<Turno> opciones2 = new ArrayList<>();
         FiltroRangoDias fDias = new FiltroRangoDias(inicio, fin);
         if (respuesta3 == 1){
-            FiltroHorario fHorario = new FiltroHorario("M");
-            FiltroANDTurno f = new FiltroANDTurno(fDias,fHorario);
-            opciones2 = medicoElegido.getTurnosDisp(f);
+            FiltroHorario f = new FiltroHorario("M");
+            //FiltroANDTurno f = new FiltroANDTurno(fDias,fHorario);
+            opciones2 = medicoElegido.getTurnosDisp(inicio,fin,f);
         }
         if (respuesta3 == 2){
-            FiltroHorario fHorario = new FiltroHorario("T");
-            FiltroANDTurno f = new FiltroANDTurno(fDias,fHorario);
-            opciones2 = medicoElegido.getTurnosDisp(f);
+            FiltroHorario f = new FiltroHorario("T");
+            //FiltroANDTurno f = new FiltroANDTurno(fDias,fHorario);
+            opciones2 = medicoElegido.getTurnosDisp(inicio,fin,f);
         }
         if (respuesta3 == 3){
-            opciones2 = medicoElegido.getTurnosDisp(fDias);
+            opciones2 = medicoElegido.getTurnosDisp(inicio,fin,null);
         }
-
+        for(int i =0;i<opciones2.size();i++){
+            System.out.println(i + ". " + opciones2.get(i).toString());
+        }
     }
 
 

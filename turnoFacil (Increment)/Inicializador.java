@@ -1,3 +1,4 @@
+import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
@@ -32,10 +33,10 @@ public class Inicializador {//se utiliza para que el usuario no vea las funciona
         cm.addMedico(m3);
 
         //DIAS DE TRABAJO,HORARIOS y OBRAS SOCIALES DE CADA MEDICO
-        ArrayList<String> diasDeTrabajo= new ArrayList<>();
-        diasDeTrabajo.add("Lunes");
-        diasDeTrabajo.add("Miercoles");
-        diasDeTrabajo.add("Viernes");
+        ArrayList<DayOfWeek> diasDeTrabajo= new ArrayList<>();
+        diasDeTrabajo.add(DayOfWeek.of(1));
+        diasDeTrabajo.add(DayOfWeek.of(3));
+        diasDeTrabajo.add(DayOfWeek.of(5));
         LocalTime inicio = LocalTime.of(8,0);
         LocalTime fin = LocalTime.of(16,0);
         ArrayList<String> obrasSociales = new ArrayList<>();
@@ -45,14 +46,14 @@ public class Inicializador {//se utiliza para que el usuario no vea las funciona
         m1.setDiasYHorarios(diasDeTrabajo, inicio, fin);
         m1.setObrasSociales(obrasSociales);
         //Medico 2
-        diasDeTrabajo.add("Martes");
+        diasDeTrabajo.add(DayOfWeek.of(2));
         obrasSociales.add("OS2");
         inicio = LocalTime.of(10,0);
         fin = LocalTime.of(18,0);
         m2.setDiasYHorarios(diasDeTrabajo, inicio,fin);
         m2.setObrasSociales(obrasSociales);
         //Medico 3
-        diasDeTrabajo.add("Jueves");
+        diasDeTrabajo.add(DayOfWeek.of(4));
         obrasSociales.add("OS3");
         inicio = LocalTime.of(8,0);
         fin = LocalTime.of(18,0);

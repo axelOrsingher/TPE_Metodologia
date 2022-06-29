@@ -1,3 +1,6 @@
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
@@ -6,7 +9,7 @@ public class Medico {
     private String apellido;
     private String especialidad;
     private ArrayList<String> obrasSociales;
-    private ArrayList<String> dias;
+    private ArrayList<DayOfWeek> dias;
     private LocalTime inicio; //suponemos que trabajan todos los dias con los mismos horarios
     private LocalTime fin;
     private ArrayList<Turno> turnosOcupados;
@@ -24,8 +27,8 @@ public class Medico {
         this.obrasSociales = new ArrayList<>(obrasSociales);
     }
 
-    public void setDiasYHorarios(ArrayList<String> dias,LocalTime horarioInic,LocalTime horarioFin){
-        this.dias = new ArrayList<String>(dias);
+    public void setDiasYHorarios(ArrayList<DayOfWeek> dias,LocalTime horarioInic,LocalTime horarioFin){
+        this.dias = new ArrayList<DayOfWeek>(dias);
         inicio = horarioInic;
         fin = horarioFin;
     }
@@ -58,7 +61,7 @@ public class Medico {
         return new ArrayList<>(turnosOcupados);
     }
 
-    public ArrayList<String> getDiasLaborales() {
+    public ArrayList<DayOfWeek> getDiasLaborales() {
         return new ArrayList<>(dias);
     }
 
@@ -73,18 +76,47 @@ public class Medico {
             salida += os + ",";
         salida += "| Especialidad: " + especialidad;
         salida += "\n" + "| Días laborales: ";
-        for (String s:dias)
+        for (DayOfWeek s:dias)
             salida += s + ",";
         salida += "| Horario: " + inicio.toString() + "-" + fin.toString() + "\n";
         return salida;
     }
 
 
-    public ArrayList<Turno> getTurnosDisp(FiltroTurno filtro){
+
+    private boolean trabaja(LocalDate f){
+        if (dias.contains(f.getDayOfWeek()))
+            return true;
+        return false;
+    }
+
+    public ArrayList<Turno> getTurnosDisp(LocalDate fechaInicio, LocalDate fechaFin,FiltroTurno filtro){
         ArrayList<Turno> salida = new ArrayList<>();
-        
+        LocalDate fecha = fechaInicio;
+        if (fechaInicio.isAfter(LocalDate.now()) && fechaFin.isAfter(fechaInicio)){
+            while (fecha.isBefore(fechaFin.plusDays(1))){
+                if (trabaja(fecha) && fecha.isBefore(fechaFin.plusDays(1))){
+                    for (int i = inicio.getHour();i<=fin.getHour();i++){
+                        LocalTime horario = LocalTime.of(i,0);
+                        LocalDateTime turno = LocalDateTime.of(fecha,horario);
+                        Turno t = new Turno(turno, null, this);
+                        if (filtro!=null){
+                            if(filtro.cumple(t)){
+                                salida.add(t);
+                            }
+                        }
+                        else{salida.add(t);}  
+                    }
+                }
+                fecha = fecha.plusDays(1);
+            }
+        }
 
-
+        for (Turno t : turnosOcupados){
+            if (salida.contains(t)){
+                salida.remove(t);
+            }
+        }
 
         return salida;
     }
