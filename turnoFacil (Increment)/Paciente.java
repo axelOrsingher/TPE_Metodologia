@@ -62,6 +62,10 @@ public class Paciente {
         return new ArrayList<>(turnos);
     }
 
+    public void addTurno(Turno t){
+        turnos.add(t);
+    }
+
     public boolean equals(Paciente p){
         return this.dni == p.getDni();
     }
@@ -79,5 +83,20 @@ public class Paciente {
 
     }
 
-    
+    public Turno seleccionarTurno(ArrayList<Turno> opciones){
+        Scanner turno = new Scanner(System.in);
+        int opcionElegida = Integer.parseInt(turno.nextLine());
+        if ((opcionElegida > opciones.size() - 1) || (opciones.size() == 0)){
+            System.out.println("Opción incorrecta.");
+            return null;
+        }
+        opciones.get(opcionElegida).setPaciente(this);
+        turnos.add(opciones.get(opcionElegida));
+        return opciones.get(opcionElegida);
+    }
+
+    public void eliminarTurno (Turno t){
+        turnos.remove(t);
+    }
+
 }

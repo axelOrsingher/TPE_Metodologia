@@ -65,11 +65,12 @@ public class Inicializador {//se utiliza para que el usuario no vea las funciona
         cm.addPaciente(p1);
         cm.addPaciente(p2);
         //SECRETARIA DE LOS 3 MEDICOS CREADOS
-        Secretaria s = new Secretaria();
-        s.addMedico(m1);
-        s.addMedico(m2);
-        s.addMedico(m3);
+        Secretaria s = new Secretaria("Josefa");
+        m1.setSecretaria(s);
+        m1.setSecretaria(s);
+        m1.setSecretaria(s);
         cm.addSecretaria(s);
+
     }
     
 }

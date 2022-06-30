@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-public class Turno {
+public class Turno implements Comparable<Turno>{
     private LocalDateTime fechaTurno;
     private Paciente paciente;
     private Medico medico;
@@ -14,6 +14,10 @@ public class Turno {
         this.medico = medico;
     }
     
+    public void setPaciente(Paciente p){
+        paciente = p;
+    }
+
     public LocalDate getFecha(){
         int anio = fechaTurno.getYear();
         int mes = fechaTurno.getMonthValue();
@@ -37,7 +41,7 @@ public class Turno {
 
 
     public boolean equals(Turno t){
-        return this.getFecha().equals(t.getFecha())&& (this.getHorario().equals(t.getHorario())) && (this.getMedico().equals(t.getMedico()));
+        return this.getFecha().equals(t.getFecha())&& (this.getHorario().equals(t.getHorario())); //&& (this.medico.equals(t.getMedico()));
     }
 
     public Medico getMedico(){
@@ -49,8 +53,14 @@ public class Turno {
     }
 
     public String toString(){
-        return "Fecha: " + fechaTurno.toString();
+        return "Fecha: " + fechaTurno.getDayOfMonth() + "/" + fechaTurno.getMonthValue() + "/" + fechaTurno.getYear() 
+            + "| Horario: " + fechaTurno.getHour() + ":" + fechaTurno.getMinute() + "0";
 
+    }
+
+    @Override
+    public int compareTo(Turno o) {
+        return this.getFecha().compareTo(o.getFecha());
     }
 
 }
