@@ -52,11 +52,9 @@ reunión.
 
 -   Problemas en la organización para codificar el Increment
 
--   Inconvenientes con el Jira. Organización de stories y el comienzo de
-    > la segunda sprint.
+-   Inconvenientes con el Jira. Organización de stories y el comienzo de la segunda sprint.
 
 5.  **What will we commit to doing in the next Sprint? (actionable
     commitments)**
 
--   Nos comprometemos a iniciar un nuevo Sprint en caso de que el
-    > cliente nos solicite mejoras.
+-   Nos comprometemos a iniciar un nuevo Sprint en caso de que el cliente nos solicite mejoras.
