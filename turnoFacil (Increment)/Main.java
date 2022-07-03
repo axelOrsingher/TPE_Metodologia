@@ -7,12 +7,13 @@ public class Main {
 
 
         i.crearCuentasEjemplo();
-        Paciente pacienteActual = menu.iniciarSesionPaciente();
-        menu.mostrarOpciones(pacienteActual);
+        //Paciente pacienteActual = menu.iniciarSesionPaciente();
+        menu.mostrarOpciones();
 
 
 
     }
+
 }
 
 

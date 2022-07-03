@@ -81,6 +81,12 @@ public class Medico {
         return (this.nombre.equals(m.getNombre()) && this.apellido.equals(m.getApellido()));
     }
 
+
+    public void eliminarTurno(Turno t){
+        if (turnosOcupados.contains(t))
+            turnosOcupados.remove(t);
+    }
+
     public String toString(){
         String salida = "Nombre: ";
         salida += nombre + " " + apellido + "| Obras Sociales: ";
@@ -98,6 +104,14 @@ public class Medico {
         if (dias.contains(f.getDayOfWeek()))
             return true;
         return false;
+    }
+
+    public ArrayList<Turno> getTurnosOcupados(LocalDate fechaInicio, LocalDate fechaFin){
+        ArrayList<Turno> salida = new ArrayList<>();
+        for (Turno t:turnosOcupados)
+            if (t.getFecha().isBefore(fechaFin.plusDays(1)) && t.getFecha().isAfter(fechaInicio.minusDays(1)))
+                salida.add(t);
+        return salida;
     }
 
     public ArrayList<Turno> getTurnosDisp(LocalDate fechaInicio, LocalDate fechaFin,FiltroTurno filtro){
@@ -131,5 +145,19 @@ public class Medico {
 
         return salida;
     }
+
+    public ArrayList<Turno> listarTurnosFiltro(FiltroTurno f){
+        ArrayList<Turno> salida = new ArrayList<>();
+        for (Turno t: this.getTurnosOcupados()){
+            if (f == null)
+                salida.add(t);
+            else {
+                if (f.cumple(t))
+                    salida.add(t);
+            }
+        }
+        return salida;
+    }
+
 
 }

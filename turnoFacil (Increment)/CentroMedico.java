@@ -34,6 +34,19 @@ public class CentroMedico { //representa la carga de datos de los usuarios, medi
         return new ArrayList<>(medicos);
     }
 
+    public Medico getMedico(String nombre, String apellido){
+        for (Medico m: medicos)
+            if (m.getNombre().equals(nombre) && m.getApellido().equals(apellido))
+                return m;
+        return null;    
+    }
+    
+    public Medico getMedico(String apellido){
+        for (Medico m: medicos)
+            if (m.getApellido().equals(apellido))
+                return m;
+        return null;    
+    }
 
     public ArrayList<Medico> getMedicos(FiltroMedico f){
         ArrayList<Medico> salida = new ArrayList<>();
@@ -54,6 +67,13 @@ public class CentroMedico { //representa la carga de datos de los usuarios, medi
         for (Paciente p:pacientes)
             if (p.getDni() == dni)
                 return p; 
+        return null;
+    }
+
+    public Secretaria getSecretaria(String nombre){
+        for (Secretaria s: secretarias)
+            if (s.getNombre().equals(nombre))
+                return s;
         return null;
     }
 

@@ -1,4 +1,6 @@
 import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
@@ -67,10 +69,20 @@ public class Inicializador {//se utiliza para que el usuario no vea las funciona
         //SECRETARIA DE LOS 3 MEDICOS CREADOS
         Secretaria s = new Secretaria("Josefa");
         m1.setSecretaria(s);
-        m1.setSecretaria(s);
-        m1.setSecretaria(s);
+        m2.setSecretaria(s);
+        m3.setSecretaria(s);
         cm.addSecretaria(s);
 
+        Turno t1 = new Turno(LocalDateTime.of(LocalDate.of(2022,7,5),LocalTime.of(12,00)),p1,m1);
+        Turno t2 = new Turno(LocalDateTime.of(LocalDate.of(2022,7,6),LocalTime.of(11,00)),p1,m2);
+        Turno t3 = new Turno(LocalDateTime.of(LocalDate.of(2022,7,5),LocalTime.of(11,00)),p2,m1);
+
+        p1.addTurno(t1);
+        p1.addTurno(t2);
+        p2.addTurno(t3);
+        m1.addTurno(t1);
+        m1.addTurno(t3);
+        m2.addTurno(t2);
     }
     
 }
