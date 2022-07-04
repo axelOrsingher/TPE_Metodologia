@@ -129,7 +129,7 @@ public class Menu {
         Scanner entrada = new Scanner (System.in);
         //INICIO DE SESION, EN CASO DE NO ESTAR REGISTRADO SE CREA UNA CUENTA
 		//System.out.println("Bienvenido a TurnoFacil");
-        System.out.println("Ingrese su DNI: ");
+        System.out.println("Ingrese su DNI (en este ejemplo ingrese 56789): ");
         long dni = Long.parseLong(entrada.nextLine());
         iniciarSesion(dni);
         Paciente pacienteActual = cm.getPaciente(dni);
