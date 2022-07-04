@@ -1,73 +1,60 @@
-﻿
+**\<TurnoFacil\>**
 
-**Grupo N°6**
+**Summary Sprint Retrospective: \<Sprint \#3\>**
 
-
-**TurnoFacil**
-
-Summary Sprint Retrospective: <Sprint 1>**
-
-**Version 1.0**
-
-
-
-
-
-|TurnoFacil|`  `Version:           1.0|
-| :- | :- |
-|Summary Sprint Retrospective: Sprint 1|`  `Date:  13/6/2022|
-|<document identifier>|
+**Version \<1.0\>**
 
 **Revision History**
 
-|**Date**|**Version**|**Description**|**Author**|
-| :-: | :-: | :-: | :-: |
-|13/6/2022|1,0|En este documento se van a detallar las posibles mejoras para el siguiente Sprint, qué salió bien y qué se puede mejorar respecto a la ultima Sprint/warm-up.|Grupo 6|
+  **Date**        **Version**   **Description**   **Author**
+  --------------- ------------- ----------------- ------------
+  \<14/07/2022\>   \<3.0\>       \<Sprint #3\>       \<TurnoFacil\>
+                                                  
+                                                  
+                                                  
 
 **Table of Contents**
 
-\1.	People invited to the meeting	4
+1\. People invited to the meeting 4
 
-\2.	List of attendees	4
+2\. List of attendees 4
 
-\3.	What worked well?	4
+3\. What worked well? 4
 
-\4.	What could be improved?	4
+4\. What could be improved? 4
 
-\5.	What will we commit to doing in the next Sprint? (actionable commitments)	4
+5\. What will we commit to doing in the next Sprint? (actionable
+commitments) 4
 
-**Summary Sprint Retrospective: <Sprint 1>** 
+\
+**Summary Sprint Retrospective: \<Iteration \#3\>**
 
-1. # **People invited to the meeting**
+1.  **People invited to the meeting**
 
-Las peronas que concurrieron al encuentro son los miembros del Scrum Team, es decir, el equipo de desarrollo (Grupo #6) y el Product Owner (Andrés Diaz Pace).
+> Las personas que concurrieron al encuentro son los miembros del Scrum
+> Team, es decir, el equipo de desarrollo (Grupo \#6) y el Product Owner
+> (Andrés Diaz Pace).
 
-1. # **List of attendees**
+2.  **List of attendees**
 
-Se corroboró que todas las personas que fueron invitadas asistieron a la reunion.
+Se corroboró que todas las personas que fueron invitadas asistieron a la
+reunión.
 
-1. # **What worked well?**
+3.  **What worked well?**
 
-- Entrega a tiempo
-- Gran espiritu de equipo
-- Buen entendimiento y realizacion de los diagramas
+-   Mejor comunicación con el Product Owner
 
-1. # **What could be improved?**
+-   Mejora en el código respecto al sprint anterior
 
-- Reducir la discrepáncia entre los miembros del equipo a la hora de la toma de decisiones
-- Mejor comunicación
-- Dificultad a la hora de pautar reuniones
-- Problemas a la hora de realizar el Increment
-- Inconvenientes con el Jira. Organizacion de stories y el comienzo de la segunda sprint.
+-   Implementación de los nuevos diagramas.
 
-1. # **What will we commit to doing in the next Sprint? (actionable commitments)**
+4.  **What could be improved?**
 
-Para el siguiente Sprint nos comprometemos a solucionar todo aquello que puede ser mejorado. Generalmente la toma decisiones o discuciones nos tomo una cantidad de tiempo que creemos que puede ser reducida.
-  
-Obviamente tambien apuntamos a centrarnos en lograr un buen Increment y a su vez mejorar el manejo del Jira, que gracias a la sprint anterior, pudimos reconocer nuestros errores y finalmente, arreglarlos.
+-   Problemas en la organización para codificar el Increment
 
+-   Inconvenientes con el Jira. Organización de stories y el comienzo de la segunda sprint.
 
+5.  **What will we commit to doing in the next Sprint? (actionable
+    commitments)**
 
-|Confidential|Ó<Company Name>, 2022|Page 4|
-| :- | :-: | -: |
-
+-   Nos comprometemos a iniciar un nuevo Sprint en caso de que el cliente nos solicite mejoras.
