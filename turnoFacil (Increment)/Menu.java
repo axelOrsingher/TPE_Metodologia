@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class Menu {
-    CentroMedico cm;
+    private CentroMedico cm;
 
     public Menu(CentroMedico cm){
         this.cm = cm;
