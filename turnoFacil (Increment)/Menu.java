@@ -104,8 +104,8 @@ public class Menu {
             opcionesTurnos = medicoElegido.getTurnosDisp(inicio,fin,null);
         }
         for(int i =0;i<opcionesTurnos.size();i++){
-            System.out.println(i + ". " + opcionesTurnos.get(i).toString());
-        }
+                System.out.println(i + ". " + opcionesTurnos.get(i).toString());
+            }
         System.out.println("Seleccione un turno(ingrese el numero): ");
         Turno turnoNuevo = actual.seleccionarTurno(opcionesTurnos);
         System.out.println("Reconfirme sus datos: ");
@@ -205,7 +205,7 @@ public class Menu {
     }
 
     public Medico iniciarSesionMedico(){
-        System.out.println("Ingrese su nombre (en este ejemplo es Santino): ");
+        System.out.println("Ingrese su nombre (en este ejemplo puede ser Lucarini/Venere): ");
         Scanner entrada = new Scanner (System.in);
         String apellido = entrada.nextLine();
         Medico salida = cm.getMedico(apellido);

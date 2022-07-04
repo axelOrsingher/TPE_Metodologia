@@ -73,9 +73,10 @@ public class Inicializador {//se utiliza para que el usuario no vea las funciona
         m3.setSecretaria(s);
         cm.addSecretaria(s);
 
-        Turno t1 = new Turno(LocalDateTime.of(LocalDate.of(2022,7,5),LocalTime.of(12,00)),p1,m1);
-        Turno t2 = new Turno(LocalDateTime.of(LocalDate.of(2022,7,6),LocalTime.of(11,00)),p1,m2);
-        Turno t3 = new Turno(LocalDateTime.of(LocalDate.of(2022,7,5),LocalTime.of(11,00)),p2,m1);
+        Turno t1 = new Turno(LocalDateTime.of(LocalDate.of(2022,07,8),LocalTime.of(12,00)),p1,m1);
+        Turno t2 = new Turno(LocalDateTime.of(LocalDate.of(2022,07,06),LocalTime.of(11,00)),p1,m2);
+        Turno t3 = new Turno(LocalDateTime.of(LocalDate.of(2022,07,8),LocalTime.of(11,00)),p2,m1);
+        Turno t4 = new Turno(LocalDateTime.of(LocalDate.of(2022,07,11),LocalTime.of(14,00)),p2,m2);
 
         p1.addTurno(t1);
         p1.addTurno(t2);
@@ -83,6 +84,7 @@ public class Inicializador {//se utiliza para que el usuario no vea las funciona
         m1.addTurno(t1);
         m1.addTurno(t3);
         m2.addTurno(t2);
+        m2.addTurno(t4);
     }
     
 }
