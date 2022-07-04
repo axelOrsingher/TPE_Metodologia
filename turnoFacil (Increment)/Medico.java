@@ -138,9 +138,9 @@ public class Medico {
 
         for (Turno t : turnosOcupados){
             //for (Turno s :salida){
-                if (salida.contains(t)){
-                    salida.remove(t);
-                }
+            if (salida.contains(t)){
+                salida.remove(t);
+            }
         }
 
         return salida;
